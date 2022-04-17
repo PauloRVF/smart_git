@@ -23,6 +23,15 @@ defmodule SmartGitWeb.PageLive do
     {:noreply, socket}
   end
 
+  def handle_event("load_repos", _params, socket) do
+    socket =
+      socket
+      |> update(:page, &(&1 + 1))
+      |> load_repo()
+
+    {:noreply, socket}
+  end
+
   defp load_repo(socket) do
     language = socket.assigns.language
     page = socket.assigns.page

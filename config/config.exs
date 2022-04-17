@@ -7,6 +7,8 @@
 # General application configuration
 import Config
 
+config :tesla, adapter: Tesla.Adapter.Hackney
+
 config :smart_git,
   ecto_repos: [SmartGit.Repo],
   generators: [binary_id: true]

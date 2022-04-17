@@ -3,7 +3,7 @@
         <img src={@repo.avatar_url} alt="profile" class="h-6 w-6 rounded-full">
         <div class="flex-1 space-y-1">
             <div class="flex items-center justify-between">
-                <h3 class="text-sm font-medium" data-role="language" data-id={@id}><%= @repo.language %></h3>
+                <h3 class="text-sm font-medium" data-role="language" data-id={@id}><%= @repo.name %></h3>
                 <p class="text-sm text-gray-500" data-role="watchers" data-id={@id}><strong>Watchers: <%= @repo.watchers_count %></strong></p>
             </div>
 

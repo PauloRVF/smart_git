@@ -1,0 +1,23 @@
+<li class="p-10 hover:bg-blue-50 rounded-md hover:transition-all" id={@id}>
+    <div class="flex space-x-3">
+        <img src="https://avatars.githubusercontent.com/u/1481354?s=200&v=4" alt="profile" ,
+            class="h-6 w-6 rounded-full">
+        <div class="flex-1 space-y-1">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium" data-role="language" data-id={@id}>Elixir Language</h3>
+                <p class="text-sm text-gray-500" data-role="watchers" data-id={@id}><strong>Watchers: 500</strong></p>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-medium" data-role="description" data-id={@id}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nulla laudantium minus.</h3>
+                <a href="#" data-role="button-action" data-id={@id} phx-click="add-repo" phx-target={@myself}>button add/go</a>
+            </div>
+            <%= if @message do %>
+                <div class="flex items-center justify-between">
+                    <div></div>
+                    <p class="text-sm text-green-500" data-role="show-message" data-id={@id}>Repo added!</p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</li>

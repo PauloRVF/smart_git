@@ -1,4 +1,4 @@
-defmodule SmartGitWeb.Page.RepoDetail do
+defmodule SmartGitWeb.Shared.RepoDetail do
   use SmartGitWeb, :live_component
   alias SmartGit.GitRepos
 
@@ -13,7 +13,7 @@ defmodule SmartGitWeb.Page.RepoDetail do
 
   def handle_event("add-repo", _params, socket) do
     repo = socket.assigns.repo
-    SmartGit.GitRepos.create(repo)
+    GitRepos.create(repo)
     message = socket.assigns.message == nil && "Repo added!" || nil
 
     {:noreply, assign(socket, message: message)}

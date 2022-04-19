@@ -36,7 +36,8 @@ defmodule SmartGit.GithubApi.GetRepos do
         "description" => description,
         "language" => language,
         "name" => name,
-        "open_issues_count" => open_issues_count
+        "open_issues_count" => open_issues_count,
+        "html_url" => url
       } = item
 
       %{
@@ -48,7 +49,8 @@ defmodule SmartGit.GithubApi.GetRepos do
         description: description,
         name: name,
         open_issues: open_issues_count,
-        language: language
+        language: language,
+        url: url
       }
     end)
   end

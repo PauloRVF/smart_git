@@ -2,6 +2,7 @@ defmodule SmartGitWeb.PageLive do
   use SmartGitWeb, :live_view
   alias SmartGitWeb.Shared.RepoDetail
   alias SmartGit.GithubApi
+  alias SmartGit.GitRepos
 
   def mount(_params, _session, socket), do: {:ok, socket}
 
@@ -9,7 +10,8 @@ defmodule SmartGitWeb.PageLive do
     language = params["language"] || "elixir"
     page = (params["page"] || "1") |> String.to_integer()
     per_page = (params["per_page"] || "5") |> String.to_integer()
-    assigns = [language: language, page: page, per_page: per_page]
+    saved_repos = GitRepos.get_all_repos_id()
+    assigns = [language: language, page: page, per_page: per_page, saved_repos: saved_repos]
 
     socket = socket
     |> assign(assigns)

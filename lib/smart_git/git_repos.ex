@@ -1,4 +1,5 @@
 defmodule SmartGit.GitRepos do
+  import Ecto.Query
   alias SmartGit.Repo
   alias SmartGit.GitRepos.GitRepo
 
@@ -8,5 +9,11 @@ defmodule SmartGit.GitRepos do
     |> Repo.insert()
   end
 
-  def get_all(), do: Repo.all(GitRepo)
+  def get_all, do: Repo.all(GitRepo)
+
+  def get_all_repos_id do
+    GitRepo
+    |> select([g], g.git_id)
+    |> Repo.all()
+  end
 end

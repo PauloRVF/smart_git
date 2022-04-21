@@ -13,9 +13,10 @@ defmodule SmartGitWeb.PageLive do
     saved_repos = GitRepos.get_all_repos_id()
     assigns = [language: language, page: page, per_page: per_page, saved_repos: saved_repos]
 
-    socket = socket
-    |> assign(assigns)
-    |> load_repo()
+    socket =
+      socket
+      |> assign(assigns)
+      |> load_repo()
 
     {:noreply, socket}
   end

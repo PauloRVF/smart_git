@@ -8,5 +8,4 @@ defmodule SmartGitWeb.RepoLive do
 
     {:ok, socket}
   end
-
 end

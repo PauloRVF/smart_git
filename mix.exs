@@ -62,7 +62,7 @@ defmodule SmartGit.MixProject do
       {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
       {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
       {:hackney, "~> 1.17"},
-      {:tesla, "~> 1.4"},
+      {:tesla, "~> 1.4"}
     ]
   end
 
@@ -78,7 +78,11 @@ defmodule SmartGit.MixProject do
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
-      "assets.deploy": ["cmd --cd assets npm run deploy", "esbuild default --minify", "phx.digest"]
+      "assets.deploy": [
+        "cmd --cd assets npm run deploy",
+        "esbuild default --minify",
+        "phx.digest"
+      ]
     ]
   end
 end

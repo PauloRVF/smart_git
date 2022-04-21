@@ -16,4 +16,6 @@ defmodule SmartGit.GitRepos do
     |> select([g], g.git_id)
     |> Repo.all()
   end
+
+  def get_by_git_id(git_id), do: Repo.get_by(GitRepo, git_id: git_id)
 end
